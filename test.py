@@ -58,6 +58,18 @@ def test_move():
     puzzle.move("right")
     assert puzzle.state == [[1, 2, 3], [4, 0, 5], [6, 7, 8]]
 
+def test_getHashString():
+    # Test getting hash string
+    puzzle = EightPuzzle()
+    # Test with default goal state
+    assert puzzle.getHashString() == "012 345 678"
+    # test that b turns to 0 every time
+    puzzle.setState("b12 345 678")
+    assert puzzle.getHashString() == "012 345 678"
+    # test random case
+    puzzle.setState("123 405 678")
+    assert puzzle.getHashString() == "123 405 678"
+
 #Test setting seed for randomizeState
 def test_seed():
     puzzle = EightPuzzle()
@@ -114,25 +126,29 @@ def test_validMoves():
     assert puzzle.validMoves() == ["up", "down", "right"]
 
 def test_Asearch_h1():
-    # Test A* search using heuristic 1
+    # Test A* search using heuristic 1 this tests a basic case 
     puzzle = EightPuzzle()
     search = GraphSearch()
+    # At this state the puzzle is already solved so the cost should be 0
     cost, path, nodes = search.solveAStar(puzzle, "h1")
     assert cost == 0
     assert path == []
     assert nodes == 1
+    # actual solution was found using an online tool to solve the 8-puzzle my method then compares to the online solver
     puzzle.setState("123 405 678")
     cost, path, nodes = search.solveAStar(puzzle, "h1")
     assert cost == 14
 
 def test_Asearch_h2():
-    # Test A* search using heuristic 2
+    # Test A* search using heuristic 2 this tests a basic case
     puzzle = EightPuzzle()
     search = GraphSearch()
+    # At this state the puzzle is already solved so the cost should be 0
     cost, path, nodes = search.solveAStar(puzzle, "h2")
     assert cost == 0
     assert path == []
     assert nodes == 1
+    # actual solution was found using an online tool to solve the 8-puzzle my method then compares to the online solver
     puzzle.setState("123 405 678")
     cost, path, nodes = search.solveAStar(puzzle, "h2")
     assert cost == 14
@@ -141,10 +157,13 @@ def test_beamSearch():
     # Test the beam search using heuristic 2
     puzzle = EightPuzzle()
     search = GraphSearch()
+    # At this state the puzzle is already solved so the cost should be 0
     cost, path, nodes = search.solveBeam(puzzle, 1)
     assert cost == 0
     assert path == []
     assert nodes == 1
+    # actual solution was found using an online tool to solve the 8-puzzle my method then compares to the online solver
+    #high kvalue to ensure that the solution is found
     puzzle.setState("312 658 074")
     cost, path, nodes = search.solveBeam(puzzle, 100)
     assert cost == 8
