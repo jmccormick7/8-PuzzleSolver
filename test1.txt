@@ -1,0 +1,10 @@
+setState b12 345 678
+printState
+move up
+printState
+move left
+solve A-star h1
+solve beam 5
+randomizeState 25
+printState
+solve A-star h2

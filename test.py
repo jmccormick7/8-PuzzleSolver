@@ -4,6 +4,8 @@
 ## Due: September 26th, 2023 18:00:00
 
 from EightPuzzle import EightPuzzle
+from EightSearchNode import SearchNode
+from search import GraphSearch
 import pytest
 
 #------------------------EightPuzzle.py Tests------------------------
@@ -92,3 +94,57 @@ def test_h2Calculation():
     assert puzzle.calculate_h2() == 6
     puzzle.setState("876 534 210")
     assert puzzle.calculate_h2() == 20
+
+def test_isGoal():
+    # Test isGoal
+    puzzle = EightPuzzle()
+    assert puzzle.isGoal() == True
+    puzzle.setState("123 405 678")
+    assert puzzle.isGoal() == False
+
+def test_validMoves():
+    # Test validMoves
+    puzzle = EightPuzzle()
+    assert puzzle.validMoves() == ["down", "right"]
+    puzzle.setState("123 405 678")
+    assert puzzle.validMoves() == ["up", "down", "left", "right"]
+    puzzle.setState("103 425 678")
+    assert puzzle.validMoves() == ["down", "left", "right"]
+    puzzle.setState("123 045 678")
+    assert puzzle.validMoves() == ["up", "down", "right"]
+
+def test_Asearch_h1():
+    # Test A* search using heuristic 1
+    puzzle = EightPuzzle()
+    search = GraphSearch()
+    cost, path, nodes = search.solveAStar(puzzle, "h1")
+    assert cost == 0
+    assert path == []
+    assert nodes == 1
+    puzzle.setState("123 405 678")
+    cost, path, nodes = search.solveAStar(puzzle, "h1")
+    assert cost == 14
+
+def test_Asearch_h2():
+    # Test A* search using heuristic 2
+    puzzle = EightPuzzle()
+    search = GraphSearch()
+    cost, path, nodes = search.solveAStar(puzzle, "h2")
+    assert cost == 0
+    assert path == []
+    assert nodes == 1
+    puzzle.setState("123 405 678")
+    cost, path, nodes = search.solveAStar(puzzle, "h2")
+    assert cost == 14
+
+def test_beamSearch():
+    # Test the beam search using heuristic 2
+    puzzle = EightPuzzle()
+    search = GraphSearch()
+    cost, path, nodes = search.solveBeam(puzzle, 1)
+    assert cost == 0
+    assert path == []
+    assert nodes == 1
+    puzzle.setState("312 658 074")
+    cost, path, nodes = search.solveBeam(puzzle, 100)
+    assert cost == 8

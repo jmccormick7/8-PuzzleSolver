@@ -135,7 +135,16 @@ class EightPuzzle():
         for i in range(0, n):
             self.move(random.choice(self.validMoves()))
 
-    
+    def getHashString(self) -> str:
+        """
+        Returns a string representing the current state of the puzzle that is standardized to 0 as the blank square for hashing purposes
+        args: None
+        returns: a string representing the current state of the puzzle with 0 as the blank square
+        """
+        string = self.getStateString()
+        string = string.replace("b", "0")
+        return string
+
     def getHeuristic(self, hueristic: str) -> int:
         """
         Returns the value of a given state according to a heuristic function specified by the user for the 8-puzzle
