@@ -1,0 +1,251 @@
+TA* search with maxNodes of 1 (h1)
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.014575004577636719
+
+A* search with maxNodes of 10 (h1)
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.08138680458068848
+
+A* search with maxNodes of 100 (h1)
+Number of successes: 3
+Number of failures: 97
+Success rate: 0.03
+Total number of moves for successes: 30
+0.8336241245269775
+
+A* search with maxNodes of 1000 (h1)
+Number of successes: 10
+Number of failures: 90
+Success rate: 0.1
+Total number of moves for successes: 146
+10.135796785354614
+
+A* search with maxNodes of 10,000 (h1)
+Number of successes: 59
+Number of failures: 41
+Success rate: 0.59
+Total number of moves for successes: 1142
+74.8645350933075
+
+A* search with maxNodes of 2**63 - 1 (h1)
+Number of successes: 100
+Number of failures: 0
+Success rate: 1.0
+Total number of moves for successes: 2244
+195.8041410446167
+
+A* search with maxNodes of 1 (h2)
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.014641046524047852
+
+A* search with maxNodes of 10 (h2)
+Number of successes: 1
+Number of failures: 99
+Success rate: 0.01
+Total number of moves for successes: 6
+0.10194778442382812
+
+A* search with maxNodes of 100 (h2)
+Number of successes: 7
+Number of failures: 93
+Success rate: 0.07
+Total number of moves for successes: 96
+0.9726190567016602
+
+A* search with maxNodes of 1000 (h2)
+Number of successes: 65
+Number of failures: 35
+Success rate: 0.65
+Total number of moves for successes: 1306
+6.918642997741699
+
+A* search with maxNodes of 10,000 (h2)
+Number of successes: 100
+Number of failures: 0
+Success rate: 1.0
+Total number of moves for successes: 2170
+11.481697082519531
+
+A* search with maxNodes of 2**63 - 1 (h2)
+Number of successes: 100
+Number of failures: 0
+Success rate: 1.0
+Total number of moves for successes: 2181
+14.92257308959961
+
+Beam search with maxNodes of 1 and k = 1
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.01152801513671875
+
+Beam search with maxNodes of 10 and k = 1
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.04184603691101074
+
+Beam search with maxNodes of 100 and k = 1
+Number of successes: 1
+Number of failures: 99
+Success rate: 0.01
+Total number of moves for successes: 7
+0.1953420639038086
+
+Beam search with maxNodes of 1000 and k = 1
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+1.859023094177246
+
+Beam search with maxNodes of 10,000 and k = 1
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+18.91620397567749
+
+Beam search with maxNodes of 100000 and k = 1
+Number of successes: 1
+Number of failures: 99
+Success rate: 0.01
+Total number of moves for successes: 4
+190.51264691352844
+
+Beam search with maxNodes of 1 and k = 5
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.005995035171508789
+
+Beam search with maxNodes of 10 and k = 5
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.03731274604797363
+
+Beam search with maxNodes of 100 and k = 5
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.20543694496154785
+
+Beam search with maxNodes of 1000 and k = 5
+Number of successes: 6
+Number of failures: 94
+Success rate: 0.06
+Total number of moves for successes: 84
+1.7487401962280273
+
+Beam search with maxNodes of 10,000 and k = 5
+Number of successes: 2
+Number of failures: 98
+Success rate: 0.02
+Total number of moves for successes: 29
+18.116434335708618
+
+Beam search with maxNodes of 100000 and k = 5
+Number of successes: 1
+Number of failures: 99
+Success rate: 0.01
+Total number of moves for successes: 12
+183.08434081077576
+
+Beam search with maxNodes of 1 and k = 10
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.005341768264770508
+
+Beam search with maxNodes of 10 and k = 10
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.028162717819213867
+
+Beam search with maxNodes of 100 and k = 10
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.2335951328277588
+
+Beam search with maxNodes of 1000 and k = 10
+Number of successes: 6
+Number of failures: 94
+Success rate: 0.06
+Total number of moves for successes: 121
+1.779642105102539
+
+Beam search with maxNodes of 10,000 and k = 10
+Number of successes: 5
+Number of failures: 95
+Success rate: 0.05
+Total number of moves for successes: 100
+17.323044776916504
+
+Beam search with maxNodes of 100000 and k = 10
+Number of successes: 6
+Number of failures: 94
+Success rate: 0.06
+Total number of moves for successes: 118
+176.23325490951538
+
+Beam search with maxNodes of 1 and k = 100
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.005488872528076172
+
+Beam search with maxNodes of 10 and k = 100
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.028139829635620117
+
+Beam search with maxNodes of 100 and k = 100
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+0.4644758701324463
+
+Beam search with maxNodes of 1000 and k = 100
+Number of successes: 0
+Number of failures: 100
+Success rate: 0.0
+Total number of moves for successes: 0
+2.0816152095794678
+
+Beam search with maxNodes of 10,000 and k = 100
+Number of successes: 16
+Number of failures: 84
+Success rate: 0.16
+Total number of moves for successes: 0
+17.334028005599976
+
+Beam search with maxNodes of 100,000 and k = 100
+Number of successes: 16
+Number of failures: 84
+Success rate: 0.16
+Total number of moves for successes: 327
+153.463458776474

@@ -23,7 +23,7 @@ class GraphSearch():
         self.maxNodes = 10000 #arbitrary max nodes value set to 10000
 
 
-    def maxNodes(self, nodes: int):
+    def setMaxNodes(self, nodes: int):
         """
         Sets a maximum number of nodes to be considered during a search
         args: nodes - the maximum number of nodes to be considered
@@ -42,6 +42,7 @@ class GraphSearch():
         explored = set() # the explored nodes that have been expanded (hash set)
 
         nodesGenerated = 1 # the number of nodes generated (including the first node)
+        nodesExplored = 0
 
         # Create the first node (root node)
         root = SearchNode(None, puzzle, heuristicFunction)
@@ -49,10 +50,14 @@ class GraphSearch():
 
         while len(frontier) > 0:
 
+            if nodesExplored > self.maxNodes:
+                return (None, [], nodesGenerated)
+
             #use the node with the lowest total cost:
             currentNode = frontier[0][1]
             if currentNode not in explored:
                 explored.add(heapq.heappop(frontier)[1])
+                nodesExplored += 1
             else:
                 heapq.heappop(frontier)
                 continue
@@ -83,6 +88,7 @@ class GraphSearch():
         """
         root = SearchNode(None, puzzle, "h2")
         frontier = [root]
+        explored = set() # the explored nodes that have been expanded (hash set)
         nodesGenerated = 1
         
         while frontier:
@@ -95,10 +101,14 @@ class GraphSearch():
                     childPuzzle = EightPuzzle(string)
                     childPuzzle.move(move)
                     child = SearchNode(node, childPuzzle, "h2", move)
+                    if child == node.parent:
+                        continue
                     nodesGenerated += 1
                     if child.state.isGoal():
                         return (child.cost, child.getPath(), nodesGenerated)
                     next.append(child)
+            if next == []:
+                return (None, [], nodesGenerated)
             frontier = sorted(next, key=lambda x: x.totalCost)[:k]
             if nodesGenerated > self.maxNodes:
                 break

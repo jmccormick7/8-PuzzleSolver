@@ -39,8 +39,8 @@ def parseCommand(puzzle: EightPuzzle, search: GraphSearch, command: str):
             command - the command line arguments and parameters to parse
     returns: None
     """
+    command = command.replace("\n", "") #remove the newline character
     command = command.split(" ")
-    command[-1] = command[-1][:-1]
     method = command[0]
     if method == "setState":
         parameters = " ".join(command[1:])
@@ -51,20 +51,24 @@ def parseCommand(puzzle: EightPuzzle, search: GraphSearch, command: str):
     elif method == "move":
         puzzle.move(command[1])
     elif method == "randomizeState":
-        puzzle.randomizeState(int(command[1]))
+        if len(command) == 2:
+            puzzle.randomizeState(int(command[1]))
+        else:
+            puzzle.randomizeState(int(command[1]), int(command[2]))
     elif method == "solve":
         if command[1] == "A-star":
             cost, path, nodes = search.solveAStar(puzzle, command[2])
-            print("Moves: " + str(cost))
-            print("Nodes expanded: " + str(nodes))
-            print_path(path)
         elif command[1] == "beam":
-            cost, path, nodes = search.solveAStar(puzzle, command[2])
+            cost, path, nodes = search.solveBeam(puzzle, int(command[2]))
+        if cost == None:
+            print("No solution found.")
+            print("Nodes expanded: " + str(nodes))
+        else:
             print("Moves: " + str(cost))
             print("Nodes expanded: " + str(nodes))
             print_path(path)
     elif method == "maxNodes":
-        search.maxNodes(int(command[1]))
+        search.setMaxNodes(int(command[1]))
     else:
         print("Invalid command. Please try again.")
 

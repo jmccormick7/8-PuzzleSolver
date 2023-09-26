@@ -1,2 +1,5 @@
 setState 82b 364 175
 solve beam 1000
+randomizeState 35 7
+maxNodes 10
+solve beam 2

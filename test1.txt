@@ -1,10 +1,22 @@
 setState b12 345 678
+solve A-star h2
 printState
-move up
+move down
 printState
-move left
+move down
+printState
 solve A-star h1
 solve beam 5
-randomizeState 25
+randomizeState 25 7
 printState
 solve A-star h2
+setState 012 345 678
+printState
+solve A-star h2
+move down
+printState
+randomizeState 100 7
+printState
+solve A-star h1
+randomizeState 20 7
+solve beam 8
