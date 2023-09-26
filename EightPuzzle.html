@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module EightPuzzle</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>EightPuzzle</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/johnmccormick/githubFolder/8-PuzzleSolver/EightPuzzle.py">/Users/johnmccormick/githubFolder/8-PuzzleSolver/EightPuzzle.py</a></font></td></tr></table>
+    <p><tt>##&nbsp;John&nbsp;McCormick&nbsp;<br>
+##&nbsp;jcm258<br>
+##&nbsp;CSDS&nbsp;391:&nbsp;Programming&nbsp;Assignment&nbsp;1<br>
+##&nbsp;Due:&nbsp;September&nbsp;26th,&nbsp;2023&nbsp;18:00:00</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="EightPuzzle.html#EightPuzzle">EightPuzzle</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="EightPuzzle">class <strong>EightPuzzle</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#EightPuzzle">EightPuzzle</a>(state=None)<br>
+&nbsp;<br>
+A&nbsp;class&nbsp;representing&nbsp;an&nbsp;8-puzzle<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="EightPuzzle-__init__"><strong>__init__</strong></a>(self, state=None)</dt><dd><tt>Constructor&nbsp;for&nbsp;the&nbsp;<a href="#EightPuzzle">EightPuzzle</a>&nbsp;class<br>
+args:&nbsp;state&nbsp;-&nbsp;(An&nbsp;optional&nbsp;parameter)&nbsp;a&nbsp;string&nbsp;representing&nbsp;the&nbsp;initial&nbsp;state&nbsp;of&nbsp;the&nbsp;puzzle&nbsp;Must&nbsp;be&nbsp;of&nbsp;the&nbsp;same&nbsp;format&nbsp;as&nbsp;setState&nbsp;takes&nbsp;("xxx&nbsp;xxx&nbsp;xxx")<br>
+returns:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="EightPuzzle-calculate_h1"><strong>calculate_h1</strong></a>(self) -&gt; int</dt><dd><tt>Calculates&nbsp;the&nbsp;heuristic&nbsp;h1&nbsp;value&nbsp;for&nbsp;a&nbsp;given&nbsp;state&nbsp;of&nbsp;the&nbsp;8-puzzle&nbsp;(this&nbsp;calculates&nbsp;the&nbsp;current&nbsp;state)<br>
+h1&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;misplaced&nbsp;tiles<br>
+args:&nbsp;None<br>
+returns:&nbsp;an&nbsp;int&nbsp;representing&nbsp;the&nbsp;heuristic&nbsp;value&nbsp;of&nbsp;the&nbsp;state</tt></dd></dl>
+
+<dl><dt><a name="EightPuzzle-calculate_h2"><strong>calculate_h2</strong></a>(self) -&gt; int</dt><dd><tt>Calculates&nbsp;the&nbsp;heuristic&nbsp;h2&nbsp;value&nbsp;for&nbsp;a&nbsp;given&nbsp;state&nbsp;of&nbsp;the&nbsp;8-puzzle&nbsp;(this&nbsp;calculates&nbsp;the&nbsp;current&nbsp;state)<br>
+h2&nbsp;is&nbsp;the&nbsp;manhattan&nbsp;distance,&nbsp;or&nbsp;the&nbsp;sum&nbsp;of&nbsp;the&nbsp;distances&nbsp;of&nbsp;each&nbsp;tile&nbsp;from&nbsp;its&nbsp;goal&nbsp;position<br>
+args:&nbsp;None<br>
+returns:&nbsp;an&nbsp;int&nbsp;representing&nbsp;the&nbsp;heuristic&nbsp;value&nbsp;of&nbsp;the&nbsp;state</tt></dd></dl>
+
+<dl><dt><a name="EightPuzzle-findBlank"><strong>findBlank</strong></a>(self) -&gt; tuple</dt><dd><tt>Method&nbsp;to&nbsp;find&nbsp;the&nbsp;blank&nbsp;square&nbsp;in&nbsp;the&nbsp;puzzle&nbsp;board<br>
+args:&nbsp;None<br>
+returns:&nbsp;tuple&nbsp;representing&nbsp;the&nbsp;location&nbsp;of&nbsp;the&nbsp;blank&nbsp;square</tt></dd></dl>
+
+<dl><dt><a name="EightPuzzle-getHashString"><strong>getHashString</strong></a>(self) -&gt; str</dt><dd><tt>Returns&nbsp;a&nbsp;string&nbsp;representing&nbsp;the&nbsp;current&nbsp;state&nbsp;of&nbsp;the&nbsp;puzzle&nbsp;that&nbsp;is&nbsp;standardized&nbsp;to&nbsp;0&nbsp;as&nbsp;the&nbsp;blank&nbsp;square&nbsp;for&nbsp;hashing&nbsp;purposes<br>
+args:&nbsp;None<br>
+returns:&nbsp;a&nbsp;string&nbsp;representing&nbsp;the&nbsp;current&nbsp;state&nbsp;of&nbsp;the&nbsp;puzzle&nbsp;with&nbsp;0&nbsp;as&nbsp;the&nbsp;blank&nbsp;square</tt></dd></dl>
+
+<dl><dt><a name="EightPuzzle-getHeuristic"><strong>getHeuristic</strong></a>(self, hueristic: str) -&gt; int</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;of&nbsp;a&nbsp;given&nbsp;state&nbsp;according&nbsp;to&nbsp;a&nbsp;heuristic&nbsp;function&nbsp;specified&nbsp;by&nbsp;the&nbsp;user&nbsp;for&nbsp;the&nbsp;8-puzzle<br>
+args:&nbsp;heuristic&nbsp;-&nbsp;a&nbsp;string&nbsp;representing&nbsp;the&nbsp;heuristic&nbsp;function&nbsp;to&nbsp;use&nbsp;(in&nbsp;this&nbsp;case&nbsp;h1&nbsp;or&nbsp;h2)<br>
+returns:&nbsp;a&nbsp;int&nbsp;representing&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;state&nbsp;according&nbsp;to&nbsp;the&nbsp;heuristic&nbsp;function</tt></dd></dl>
+
+<dl><dt><a name="EightPuzzle-getStateString"><strong>getStateString</strong></a>(self) -&gt; str</dt><dd><tt>Returns&nbsp;a&nbsp;string&nbsp;representing&nbsp;the&nbsp;current&nbsp;state&nbsp;of&nbsp;the&nbsp;puzzle<br>
+args:&nbsp;None<br>
+returns:&nbsp;a&nbsp;string&nbsp;representing&nbsp;the&nbsp;current&nbsp;state&nbsp;of&nbsp;the&nbsp;puzzle&nbsp;(in&nbsp;the&nbsp;xxx&nbsp;xxx&nbsp;xxx&nbsp;format)</tt></dd></dl>
+
+<dl><dt><a name="EightPuzzle-isGoal"><strong>isGoal</strong></a>(self) -&gt; bool</dt><dd><tt>Checks&nbsp;if&nbsp;the&nbsp;current&nbsp;state&nbsp;is&nbsp;the&nbsp;goal&nbsp;state<br>
+args:&nbsp;None<br>
+returns:&nbsp;True&nbsp;if&nbsp;the&nbsp;current&nbsp;state&nbsp;is&nbsp;the&nbsp;goal&nbsp;state,&nbsp;False&nbsp;otherwise</tt></dd></dl>
+
+<dl><dt><a name="EightPuzzle-move"><strong>move</strong></a>(self, direction: str)</dt><dd><tt>Makes&nbsp;a&nbsp;move&nbsp;in&nbsp;the&nbsp;desired&nbsp;direction&nbsp;and&nbsp;updates&nbsp;the&nbsp;gameboard<br>
+args:&nbsp;direction&nbsp;-&nbsp;a&nbsp;string&nbsp;representing&nbsp;the&nbsp;direction&nbsp;to&nbsp;move&nbsp;the&nbsp;blank&nbsp;square<br>
+returns:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="EightPuzzle-printState"><strong>printState</strong></a>(self)</dt><dd><tt>Prints&nbsp;the&nbsp;current&nbsp;state&nbsp;of&nbsp;the&nbsp;puzzle.<br>
+args:&nbsp;None<br>
+returns:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="EightPuzzle-randomizeState"><strong>randomizeState</strong></a>(self, n: int, seed: int = None)</dt><dd><tt>Randomizes&nbsp;the&nbsp;state&nbsp;of&nbsp;the&nbsp;puzzle&nbsp;by&nbsp;making&nbsp;n&nbsp;random&nbsp;moves<br>
+args:&nbsp;n&nbsp;-&nbsp;the&nbsp;number&nbsp;of&nbsp;random&nbsp;moves&nbsp;to&nbsp;make<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seed&nbsp;-&nbsp;(optional)&nbsp;a&nbsp;seed&nbsp;for&nbsp;the&nbsp;random&nbsp;number&nbsp;generator&nbsp;(for&nbsp;standardizing&nbsp;testing&nbsp;procedures)<br>
+returns:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="EightPuzzle-setState"><strong>setState</strong></a>(self, state)</dt><dd><tt>Sets&nbsp;the&nbsp;state&nbsp;of&nbsp;the&nbsp;puzzle&nbsp;to&nbsp;the&nbsp;given&nbsp;state.<br>
+args:&nbsp;state-&nbsp;a&nbsp;string&nbsp;representing&nbsp;the&nbsp;puzzle&nbsp;state&nbsp;(9&nbsp;numbers&nbsp;in&nbsp;groups&nbsp;of&nbsp;3,&nbsp;0&nbsp;for&nbsp;blank)<br>
+returns:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="EightPuzzle-validMoves"><strong>validMoves</strong></a>(self) -&gt; list</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;valid&nbsp;directional&nbsp;moves&nbsp;for&nbsp;the&nbsp;blank&nbsp;square<br>
+args:&nbsp;None<br>
+returns:&nbsp;list&nbsp;of&nbsp;strings&nbsp;representing&nbsp;valid&nbsp;moves</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>goalState0</strong> = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]</dl>
+
+<dl><dt><strong>goalStateb</strong> = [['b', 1, 2], [3, 4, 5], [6, 7, 8]]</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

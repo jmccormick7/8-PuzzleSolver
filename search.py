@@ -10,6 +10,9 @@ import heapq # For priority queue (allows usage of heapq.heappush and heapq.heap
 
 
 class GraphSearch():
+    """
+    This class holds all of the graph searches for any puzzles given certain methods within the puzzle class itself.
+    """
 
     def __init__(self):
         """
