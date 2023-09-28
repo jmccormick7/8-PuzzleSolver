@@ -44,6 +44,9 @@ The second test included examples unsolvable to test that failed tests would not
 Experiments:
 Data Collected from running 10 terminal instances in which for every variation below 100 random trials were conducted and then these 10 instances had their data aggregated into the tables below:
 
+<img width="605" alt="Screenshot 2023-09-28 at 2 27 53 PM" src="https://github.com/jmccormick7/8-PuzzleSolver/assets/123213439/a7a9f70e-10b1-4bbb-9cca-7fb8365e068f">
+
+
 How does the fraction of solvable puzzles from random initial states vary with the maxNodes limit? 
 
 For all the three methods, in general, as maxNodes increases as does the share of puzzles that can be solved. However this does seem to at times have a lesser effect with the beam search, as the k value seems to be a larger constraint. But for both heuristics in A* search, there was an increase in the percentage of puzzles solved as maxNodes increased. This makes sense as the longer A* is allowed to search for the more solutions it will find. This is seen with the increase in average moves per solution as the A* algorithm is able to dig deeper. Essentially maxNodes increasing increases the depth to which A* can search and longer solutions are then unlocked. However with beam search the opposite seems to be true. While yes as maxNodes increases so too does the percentage of puzzles solved, as k values increase average move number decreases along with the increase in problems solved. This suggests that k value is more important to the search algorithm as it is able to search down more branches thus having a better chance of finding the shortest path. So maxNodes helps beam search solve more, but ultimately the larger impact is on the efficacy of the k value for beam search.
