@@ -4,6 +4,8 @@
 ## Due: September 26th, 2023 18:00:00
 
 from EightPuzzle import EightPuzzle
+#! only change in this file to to take Fifteen Puzzles rather than 8 puzzles
+from FifteenPuzzle import FifteenPuzzle
 from EightSearchNode import SearchNode
 import heapq # For priority queue (allows usage of heapq.heappush and heapq.heappop)
 
@@ -32,7 +34,7 @@ class GraphSearch():
         self.maxNodes = nodes
     
 
-    def solveAStar(self, puzzle: EightPuzzle, heuristicFunction: str) -> tuple:
+    def solveAStar(self, puzzle: FifteenPuzzle, heuristicFunction: str) -> tuple:
         """
         Solves the given puzzle using A* search
         args: puzzle - the puzzle to be solved, heuristicFunction - a string representing the heuristic function to be used (an arg to the heuristic evaluation function)
@@ -69,7 +71,7 @@ class GraphSearch():
             #create children
             for move in currentNode.state.validMoves():
                 string = currentNode.state.getStateString()
-                childPuzzle = EightPuzzle(string)
+                childPuzzle = FifteenPuzzle(string)
                 childPuzzle.move(move)
                 child = SearchNode(currentNode, childPuzzle, heuristicFunction, move)
                 if child.state.isGoal():
@@ -80,7 +82,7 @@ class GraphSearch():
 
 
 
-    def solveBeam(self, puzzle: EightPuzzle, k: int) -> tuple:
+    def solveBeam(self, puzzle: FifteenPuzzle, k: int) -> tuple:
         """
         Solves the given puzzle using beam search
         args: puzzle - the puzzle to be solved, k - the number of nodes to be considered at each level
@@ -98,7 +100,7 @@ class GraphSearch():
                     return (node.cost, node.getPath(), nodesGenerated)
                 for move in node.state.validMoves():
                     string = node.state.getStateString()
-                    childPuzzle = EightPuzzle(string)
+                    childPuzzle = FifteenPuzzle(string)
                     childPuzzle.move(move)
                     child = SearchNode(node, childPuzzle, "h2", move)
                     if child == node.parent:

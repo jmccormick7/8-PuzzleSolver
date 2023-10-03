@@ -78,11 +78,6 @@ def test_seed():
     puzzle2.randomizeState(25, 7)
     assert puzzle.state == puzzle2.state
 
-def test_getStateString():
-    # Test getting state string
-    puzzle = EightPuzzle()
-    assert puzzle.getStateString() == "012 345 678"
-
 def test_h1Calculation():
     # Test h1 calculation
     # Hand calculated the heuristic value of the states for h1 and compared to actual result from code

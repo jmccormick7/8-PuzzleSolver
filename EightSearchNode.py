@@ -4,14 +4,15 @@
 ## Due: September 26th, 2023 18:00:00
 
 from EightPuzzle import EightPuzzle
-
+# Only change is to take a FifteenPuzzle rather than an EightPuzzle
+from FifteenPuzzle import FifteenPuzzle
 
 class SearchNode():
     """
     Class for a search node that holds itself and its child nodes
     """
 
-    def __init__(self, parent = None, state: EightPuzzle = None, heuristicFunction: str = None, move = None):
+    def __init__(self, parent = None, state: FifteenPuzzle = None, heuristicFunction: str = None, move = None):
         """
         Constructor for the SearchNode class
         args: parent - the parent node of the node, state - A puzzle object with the board position of the node
